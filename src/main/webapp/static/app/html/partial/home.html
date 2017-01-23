@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Home</a>
+				<a class="navbar-brand" href="/#/ads">Ad</a>
+				<a class="navbar-brand" href="/#/categories">Category</a>
+			</div>
+
+			<form ng-hide="singedId" class="navbar-form navbar-right" role="search">
+  			<div class="form-group">
+    			<input ng-model="logUser" type="text" class="form-control" placeholder="username">
+					<input ng-model="logPass" type="password" class="form-control" placeholder="password">
+  			</div>
+  			<button ng-click="logIn()" type="submit" class="btn btn-default btn-md">Log in</button>
+				<a href="/#/registration" class="btn btn-default btn-md">Registration</a>
+			</form>
+			<div ng-show = "alertLogUser" class="alert alert-danger" role="alert">Oh snap! Change an username and try submitting again.</div>
+			<div ng-show = "alertLogPass" class="alert alert-danger" role="alert">Oh snap! Change an password and try submitting again.</div>
+			<p ng-show="singedIn" class="navbar-text navbar-right">Signed in as Mark Otto</p>
+		</div>
+	</nav>
+<div class="list-group">
+  <a href="/#/ads" class="list-group-item">More about ads</a>
+  <a href="/#/categories" class="list-group-item">More about category</a>
+</div>

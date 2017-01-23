@@ -1,0 +1,44 @@
+<h2>Registracija korisnika</h2> <!-- DOMAĆI: Ovaj deo sluzi da znamo da li smo na stranicu stigli sa add ili edit, u zavisnosti od toga će prikazati naslov -->
+
+
+<form ng-init="init()" class="form-horizontal"> 
+<div class="form-group">
+     <label class="col-sm-2 control-label">Username</label>
+     <div class="col-sm-4">
+      <input ng-model="user.userName" type="text" class="form-control" placeholder="username..." autofocus>
+     </div>
+   </div>
+<div class="form-group">
+     <label class="col-sm-2 control-label">Password</label>
+     <div class="col-sm-4">
+      <input ng-model="user.password" type="password" class="form-control" placeholder="password...">
+     </div>
+   </div>                  
+<div class="form-group">
+     <label class="col-sm-2 control-label">Retype password</label>
+     <div class="col-sm-4">
+      <input ng-model = "passAgain" type="password" class="form-control" placeholder="password again...">
+     </div>
+   </div>                <!-- za editovanje ovo polje nam ne treba, zato sto u metodi edit u ApiUserController metoda prima UserDTO koji nema password-e -->
+<div class="form-group">
+     <label class="col-sm-2 control-label">E-mail</label>
+     <div class="col-sm-4">
+      <input ng-model="user.email" type="email" class="form-control" placeholder="email...">
+     </div>
+   </div>
+
+<div class="form-group">
+     <label class="col-sm-2 control-label">Phone number</label>
+     <div class="col-sm-4">
+      <input ng-model="user.phone" type="text" class="form-control" placeholder="phone no...">
+     </div>
+   </div>  <!-- Ako smo stigli sa linka za editovanje ovo polje ce nam biti popunjeno -->
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+        <button  ng-click="register(user)" type="submit" class="btn btn-default">Register</button>
+       </div>
+ </div>
+</form>
+<div ng-show = "usernameEx" class="alert alert-warning" role="alert">Username is already in use!</div>
+<div ng-show = "passEx" class="alert alert-warning" role="alert">Password is not corretly re-type!</div>

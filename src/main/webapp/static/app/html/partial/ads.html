@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Home</a>
+				<a class="navbar-brand" href="/#/ads">Ad</a>
+				<a class="navbar-brand" href="/#/categories">Category</a>
+			</div>
+		</div>
+	</nav>
+
+
+<div ng-init="getAll();">
+	Categories
+	<select ng-model ="filtCategory" ng-change = "getAdsAll()">
+		<option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+	</select>
+	Expire date
+	<input type="date" ng-model = "filtDate" ng-change="getAdsAll();">
+</div>
+
+      <div class="col-md-6">
+    <table ng-init="getAdsAll();" class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>category</th>
+				<th>title</th>
+				<th>created</th>
+				<th>expired</th>
+				<th>author</th>
+				<th>action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-hide= dateExpired(ad) ng-repeat="ad in ads">
+				<td>{{$index+1}}</td>
+				<td>{{ad.category.name}}</td>
+				<td>{{ad.title}}</td>
+				<td>{{ad.created | date: "dd/MM/yy"}}</td>
+				<td>{{ad.expire | date : "dd/MM/yy"}}</td>
+				<td>{{ad.author.userName}}</td>
+				<td><a class= "btn btn-default btn-sm"  href="/#/ads/view/{{ad.id}}">View</a></td>
+			</tr>
+		</tbody>
+	</table>

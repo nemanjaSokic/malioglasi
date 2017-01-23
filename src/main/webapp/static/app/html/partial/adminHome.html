@@ -1,0 +1,42 @@
+<div ng-init="init()">
+<nav ng-init="getOneAdmin()" class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/admin/adminhome">Home</a>
+				<a class="navbar-brand" href="/#/admin/ads">Ad</a>
+				<a class="navbar-brand" href="/#/admin/categories">Category</a>
+				<a class="navbar-brand" href="/#/admin/authors">Author</a>
+				<p class="navbar-text navbar-right">Wellcome {{admin.userName}}</p>
+				<button ng-click="logOut()">Logout</button>
+			</div>
+		</div>
+	</nav>
+
+<div class="container">
+	<!-- Example row of columns -->
+	<div class="row text-center">
+		<div class="col-md-4">
+			<h2>Ads</h2>
+			<p>CRUD operations on ads.</p>
+			<p>
+				<a class="btn btn-default" href="/#/admin/ads" role="button">Ad &raquo;</a>
+			</p>
+		</div>
+		<div class="col-md-4">
+			<h2>Category</h2>
+			<p>CRUD operations on categories.</p>
+			<p>
+				<a class="btn btn-default" href="/#/admin/categories" role="button">Category &raquo;</a>
+			</p>
+		</div>
+		
+		<div class="col-md-4">
+			<h2>Users</h2>
+			<p>CRUD operations on users.</p>
+			<p>
+				<a class="btn btn-default" href="/#/admin/authors" role="button">Users &raquo;</a>
+			</p>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<h2>Account</h2>
+<label>your ads</label>
+<table ng-init="getUserAds();" class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>category</th>
+				<th>title</th>
+				<th>created</th>
+				<th>expired</th>
+				<th>author</th>
+				<th>action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="ad in ads">
+				<td>{{$index+1}}</td>
+				<td>{{ad.category.name}}</td>
+				<td>{{ad.title}}</td>
+				<td>{{ad.created | date: "dd/MM/yy"}}</td>
+				<td>{{ad.expire | date : "dd/MM/yy"}}</td>
+				<td>{{ad.author.userName}}</td>
+                <td><button ng-click="deleteAd(ad.id)" class= "btn btn-warning btn-sm">delete</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+    <div>
+        <form>
+            <p>Old password</p><input ng-model="oldPass" type="password" required />
+            <p>New password</p><input ng-model="newPass" type="password" required/>
+            <p>Confirm new password</p><input ng-model ="confPass" type="password" required/>
+            <button type="submit" ng-click="getOneUser();changePass();">Submit</button>
+        </form>
+    </div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Home</a>
+				<a class="navbar-brand" href="/#/ads">Ad</a>
+				<a class="navbar-brand" href="/#/categories">Category</a>
+			</div>
+		</div>
+	</nav>
+<table ng-init="getAll();" class="table table-striped">
+	<thead>
+		<tr>
+			<th>#
+                <button ng-click="property=categoryId;changeDir();btnSortNo=true;getAll();" ng-hide="btnSortNo" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+                </button>
+                <button ng-click="property=categoryId;changeDir();btnSortNo=false;getAll();" ng-show="btnSortNo" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+                </button>
+            </th>
+			<th>Name of category
+                <button ng-click="property=name;changeDir();btnSortName=true;getAll();" ng-hide="btnSortName" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+                </button>
+                <button ng-click="property=name;changeDir();btnSortName=false;getAll();" ng-show="btnSortName" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+                </button>
+            </th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="category in categories">
+			<td>{{category.categoryId}}</td>
+			<td>{{ category.name }}</td>
+			<td>{{ category.describe }}</td>
+		</tr>
+	</tbody>
+</table>

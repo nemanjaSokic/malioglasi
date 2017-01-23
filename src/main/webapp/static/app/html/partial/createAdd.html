@@ -1,0 +1,23 @@
+<h2 ng-init= "init()">Create new ad</h2>
+
+<form  ng-init="getAll();">
+<table class="table table-striped">
+        
+            <tr>
+                <th>new title</th>
+                <td><input type="text" ng-model="ad.title" /></td>
+            </tr>
+            <tr>
+                <th>text</th>
+                <td><input ng-model="ad.text" type="text" /></td>
+            </tr>
+            <tr>
+                <th>category</th>
+                <td><select ng-model="categoryName">
+                        <option ng-repeat="category in categories">{{category.name}}</option>
+                    </select></td>
+            </tr>
+    </table>
+    <button ng-click="saveAd()" >Create</button>
+</form>
+<div ng-show="adEx" class="alert alert-warning" role="alert">Ooops, something get wrong!</div>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Home</a>
+				<a class="navbar-brand" href="/#/ads">Ad</a>
+				<a class="navbar-brand" href="/#/categories">Category</a>
+			</div>
+		</div>
+	</nav>
+
+<h2>Ad View</h2>
+
+
+
+    <table class="table table-striped" ng-init="init()">
+        
+            <tr>
+                <th>title</th>
+                <td>{{ad.title}}</td>
+            </tr>
+            <tr>
+                <th>text</th>
+                <td>{{ad.text}}</td>
+            </tr>
+            <tr>
+                <th>created</th>
+                <td>{{ad.created | date:"dd/MM/yy"}}</td>
+            </tr>
+            <tr>
+                <th>expired</th>
+                <td>{{ad.expire | date:"dd/MM/yy"}}</td>
+            </tr>
+            <tr>
+                <th>author</th>
+                <td>{{ad.author.userName}}</td>
+            </tr>
+            <tr>
+                <th>mail</th>
+                <td>{{ad.author.email}}</td>
+            </tr>
+            <tr>
+                <th>phone</th>
+                <td>{{ad.author.phone}}</td>
+            </tr>
+    </table>
